@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="width">
+<input type="text" id="height" onchange="drawRect()">
+<input type="range" id="radius" min="30" max="100" oninput="drawRect()" onchange="drawRect()">
+<button onclick="drawRect()">Ve</button>
+<canvas id="my-canvas" width="500" height="500" style="border: 1px solid red"></canvas>
+<script src="Rectangle.js"></script>
+<script src="Circle.js"></script>
+<script>
+    function drawRect(){
+        let width = document.getElementById('radius').value;
+        //let height = document.getElementById('height').value;
+        let rec1 = new Rectangle(width, width, 50, 50);
+        let rec2 = new Rectangle(width, width, 150, 150);
+        rec1.draw();
+        rec2.draw();
+    }
+
+</script>
+</body>
+</html>
